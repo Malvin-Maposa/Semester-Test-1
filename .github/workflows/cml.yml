@@ -9,11 +9,11 @@ jobs:
       - name: Train Model
         run: |
           pip install -r requirements.txt
-          python testscript.py
+          python testscript2.py
       - name: CML Report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN}}
         run: |
           echo "## Model Performance" > report.md
-          cat results.txt >> report.md
+          cat results2.txt >> report.md
           cml comment create report.md
